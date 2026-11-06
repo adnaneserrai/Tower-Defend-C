@@ -473,7 +473,10 @@ int **initChemin(){
 
     while(i < NBCOORDPARCOURS){
         essais++;
-        if(essais > 1000) return initChemin();
+        if(essais > 1000){
+            freeChemin(chemin); // libère le chemin bloqué avant de recommencer
+            return initChemin();
+        }
 
         int direction;
 
@@ -657,7 +660,7 @@ void resoudreCombats(TplateauJeu jeu, TListePlayer playerRoi, TListePlayer *hord
         ch = suiv;
     }
 }
-
+
 // sauvegarde
 void sauvegardeBinaire(const char* filename, TListePlayer roi, TListePlayer horde)
 {
