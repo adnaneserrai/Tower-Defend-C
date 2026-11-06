@@ -1,0 +1,18 @@
+# Build output
+*.o
+towerdefend
+towerdefend.exe
+bin/
+obj/
+
+# Save files written at runtime
+partiebin.clb
+partieseq.cls
+
+# IDE
+*.depend
+*.layout
+
+# OS
+.DS_Store
+Thumbs.db
